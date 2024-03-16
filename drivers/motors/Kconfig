@@ -1,0 +1,19 @@
+menuconfig LGE_MOTORS
+	bool "LGE Motor Support"
+	help
+	  Generic Motor support.
+
+	  If unsure, say no.
+
+if LGE_MOTORS
+
+config LGE_MOTORS_STSPIN220
+	bool "This is a step motor and using PWM PM8150 generated."
+	depends on LGE_MOTORS
+	help
+	  LGE step motor driver for STSPIN220 IC.
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called motors-stspin220.
+
+endif

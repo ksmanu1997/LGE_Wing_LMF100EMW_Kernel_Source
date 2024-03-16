@@ -1,0 +1,319 @@
+config MACH_LGE
+    bool "Machine LGE"
+    help
+        Support for machine LGE.
+
+menu "LGE Board Selection"
+
+config LGE_PM
+	tristate "KONA(SM7250) LGE POWER Feature"
+	depends on SPMI || MSM_SPMI
+	help
+	  Say Y here to enable support for KONA(SM7250)/PM7250 chip lge feature.
+	  Power Management, Battery charging, Battery Monitoring System
+	  with battery FET and battery gauge.
+
+config LGE_PM_DEBUG
+    bool "Support LGE PM Debug Feature"
+    default n
+    depends on MACH_LGE
+    help
+        LGE PM Debug Feature
+
+config MACH_LITO_CAYMANLM
+    bool "LITO CAYMANLM"
+    depends on ARCH_LITO
+    select MACH_LGE
+    select LGE_DM_VERITY_RECOVERY
+    help
+        Support for the Qualcomm LITO(SM7250) CAYMANLM device.
+
+config MACH_LITO_CAYMANLM_LDU
+    bool "LITO CAYMANLM_LDU"
+    depends on ARCH_LITO
+    select MACH_LGE
+    select LGE_DM_VERITY_RECOVERY
+    help
+        Support for the Qualcomm LITO(SM7250) CAYMANLM_LDU device.
+
+config MACH_LITO_CAYMANLM_LAO_COM
+    bool " LITO_CAYMANLM_LAO_COM"
+    depends on ARCH_LITO
+    select MACH_LGE
+    select LGE_DM_VERITY_RECOVERY
+    help
+        Support for the Qualcomm LITO(SM7250) CAYMANLM_LAO_COM device.
+
+config MACH_LITO_CAYMANLM_DCM_JP
+    bool " LITO_CAYMANLM_DCM_JP"
+    depends on ARCH_LITO
+    select MACH_LGE
+    select LGE_DM_VERITY_RECOVERY
+    help
+        Support for the Qualcomm LITO(SM7250) CAYMANLM_DCM_JP device.
+
+config MACH_LITO_CAYMANLM_SB_JP
+    bool " LITO_CAYMANLM_SB_JP"
+    depends on ARCH_LITO
+    select MACH_LGE
+    select LGE_DM_VERITY_RECOVERY
+    help
+        Support for the Qualcomm LITO(SM7250) CAYMANLM_SB_JP device.
+
+config MACH_LITO_WINGLM
+    bool "LITO WINGLM"
+    depends on ARCH_LITO
+    select MACH_LGE
+    select LGE_DM_VERITY_RECOVERY
+    help
+        Support for the Qualcomm LITO(SM7250) WINGLM device.
+
+config MACH_LITO_WINGLM_LAO_COM
+    bool " LITO_WINGLM_LAO_COM"
+    depends on ARCH_LITO
+    select MACH_LGE
+    select LGE_DM_VERITY_RECOVERY
+    help
+        Support for the Qualcomm LITO(SM7250) WINGLM_LAO_COM device.
+
+config MACH_LITO_VICTORIALM
+    bool "LITO VICTORIALM"
+    depends on ARCH_LITO
+    select MACH_LGE
+    select LGE_DM_VERITY_RECOVERY
+    help
+        Support for the Qualcomm LITO(SM7250) VICTORIALM device.
+
+config MACH_LITO_VICTORIALM_LAO_COM
+    bool " LITO_VICTORIALM_LAO_COM"
+    depends on ARCH_LITO
+    select MACH_LGE
+    select LGE_DM_VERITY_RECOVERY
+    help
+        Support for the Qualcomm LITO(SM7250) VICTORIALM_LAO_COM device.
+
+config MACH_LITO_ACELM
+    bool "LITO ACELM"
+    depends on ARCH_LITO
+    select MACH_LGE
+    select LGE_DM_VERITY_RECOVERY
+    help
+        Support for the Qualcomm LITO(SM7250) ACELM device.
+
+config MACH_LITO_ACELM_LAO_COM
+    bool " LITO_ACELM_LAO_COM"
+    depends on ARCH_LITO
+    select MACH_LGE
+    select LGE_DM_VERITY_RECOVERY
+    help
+        Support for the Qualcomm LITO(SM7250) ACELM_LAO_COM device.
+
+config MACH_LAGOON_ACEXLM
+    bool "LAGOON ACEXLM"
+    depends on ARCH_LAGOON
+    select MACH_LGE
+    select LGE_DM_VERITY_RECOVERY
+    help
+        Support for the Qualcomm LAGOON(SM6350) ACEXLM device.
+
+config MACH_LAGOON_ACEXLM_LAO_COM
+    bool "LAGOON ACEXLM LAO COM"
+    depends on ARCH_LAGOON
+    select MACH_LGE
+    select LGE_DM_VERITY_RECOVERY
+    help
+        Support for the Qualcomm LAGOON(SM6350) ACEXLM_LAO_COM device.
+
+config MACH_LAGOON_SMASHJLM
+    bool "LAGOON SMASHJLM"
+    depends on ARCH_LAGOON
+    select MACH_LGE
+    select LGE_DM_VERITY_RECOVERY
+    help
+        Support for the Qualcomm LAGOON(SM6350) SMASHJLM device.
+
+config MACH_LAGOON_SMASHJLM_COM1_JP
+    bool "LAGOON SMASHJLM COM1 JP"
+    depends on ARCH_LAGOON
+    select MACH_LGE
+    select LGE_DM_VERITY_RECOVERY
+    help
+        Support for the Qualcomm LAGOON(SM6350) SMASHJLM_COM1_JP device.
+
+config LGE_PM_PRM
+	tristate "Support LGE Power resource manager"
+	help
+	  LGE power resource manager
+
+endmenu
+
+menu "LGE Specific Patches"
+
+config LGE_HANDLE_PANIC
+	tristate "Support LGE Crash Handler"
+	default n
+	depends on MACH_LGE
+	select LGE_HANDLE_PANIC_RPMH_TIMEOUT
+	help
+	  LGE Crash Handler
+
+config LGE_HANDLE_PANIC_RPMH_TIMEOUT
+	tristate "Support LGE Crash Handler RPMH Timeout"
+	default n
+	depends on LGE_HANDLE_PANIC
+	help
+	  LGE Crash Handler
+
+config LGE_BOOTLOADER_LOG
+	tristate "Support LGE bootloader log"
+	default n
+	depends on MACH_LGE
+	help
+	  LGE bootloader log
+
+config LGE_PSTORE_BACKUP
+	tristate "Support pstore backup"
+	default y
+	depends on MACH_LGE
+	help
+	  Ramoops region is backed up to pstore partition
+
+config LGE_BOOTLOADER_TIME_CHECKER
+	tristate "Supprt bootloader(LK, SBL) time"
+	default n
+	depends on MACH_LGE
+	help
+	  Check LK, SBL booting time at
+	  sys/module/lge_bootloader_time_checker/parameters/lk_time
+	  sys/module/lge_bootloader_time_checker/parameters/sbl_time
+
+config LGE_RTC_START_YEAR
+    int "Set rtc start time offset"
+    default n
+    depends on MACH_LGE
+    help
+      Set rtc start time offset
+
+config LGE_QSDL_SUPPORT
+	tristate "Support for Quality Statistics Data Logging"
+	default n
+	depends on MACH_LGE
+	help
+	  QSDL is a feature which notify infomation for quality statistics
+	  data logging of device.
+
+config LGE_PM_SMPL_COUNTER
+	tristate "Support LGE SMPL COUNTER feature"
+	default n
+	depends on MACH_LGE
+	help
+	  Say y to enable smpl_cnt module, that count when
+	  booted by SMPL
+
+config LGE_DM_VERITY_RECOVERY
+	tristate "Support dm verity corrupt recovery"
+	default n
+	depends on MACH_LGE
+	help
+	  Sometimes, dm-bufio has invalid data. If data is corrupted,
+	  try to recover data.
+
+config LGE_ONE_BINARY_SKU
+	tristate "Support LGE One binary sku carrier"
+	default n
+	depends on MACH_LGE
+	help
+	  LGE One Binary sku carrier
+
+config LGE_DUAL_SCREEN
+	bool "Support Dual Screen"
+	depends on MACH_LGE
+	help
+	  Say 'y" here to include support for dual screen.
+
+config LGE_SWIVEL_HALLIC_SUPPORT
+	bool "Support Swivel Hallic"
+	depends on MACH_LGE
+	help
+	  Say 'y" here to include support for swivel hallic.
+
+config LGE_DISPLAY_DIMMING_BOOT_SUPPORT
+	bool "Support dimming boot"
+	depends on MACH_LGE
+	help
+	  Say 'y" here to include support for dimming boot.
+
+config LGE_DISPLAY_BAN_CRACK_PANEL_SUPPORT
+	bool "Support ban crack panel"
+	depends on MACH_LGE
+	help
+	  Say 'y" here to include support for banning crack panel.
+
+config LFS_COMMON
+	bool "Support LGE Filesystem Kernel Feature"
+	default y if MACH_LGE
+	select NLS_UTF8
+	help
+	  Say 'y' here to enable LGE Filesystem Features
+
+config LGE_MME_BUS
+        bool "boost interface for LGE MME"
+        depends on MACH_LGE
+        help
+          Say 'y' here to include support for the boost interface
+          of msm bus to support LGE MME.
+
+config LGE_MME_BOOST
+        bool "booster for LGE MME"
+        depends on LGE_MME_BUS
+        help
+          Say 'y' here to include support for the boost
+          of msm bus to support LGE MME.
+
+config LGE_MME_BOOST_LONG_TERM
+        bool "Long term booster for LGE MME"
+        depends on LGE_MME_BUS
+        help
+          Say 'y' here to include support for the long term boost
+          of msm bus to support LGE MME.
+
+config LGE_MME_BOOST_EBI
+        bool "EBI Clock booster for LGE MME"
+        depends on LGE_MME_BUS
+        help
+          Say 'y' here to include support for the ebi clock boost
+          of msm bus to support LGE MME.
+
+config LGE_MME_PM_QOS_DMA_LATENCY
+        bool "PM QOS DMA latency for LGE MME"
+        depends on LGE_MME_BUS
+        help
+          Say 'y' here to include support for PM QOS DMA Latency
+          of msm bus to support LGE MME.
+
+config LGE_MME_DRV
+        tristate "Support WMC driver"
+        depends on MACH_LGE
+        default m
+        help
+          Say 'y' here to enable Wireless Magnetic Communication driver for LG pay
+
+config LGE_POWEROFF_TIMEOUT
+	bool "Support shutdown and reboot timeout"
+	depends on MACH_LGE
+	default y
+	help
+	  Say 'y" here to include support for shutdown and reboot timeout.
+
+endmenu
+
+menu "LGE QFPROM Values"
+
+config LGE_QFPROM_INTERFACE
+	bool "Support qfprom interface"
+	default n
+	depends on MACH_LGE
+	help
+	  LGE QFPROM DRIVER.
+
+endmenu

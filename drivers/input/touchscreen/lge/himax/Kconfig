@@ -1,0 +1,9 @@
+#
+# LGE touch core configuration
+#
+if INPUT_TOUCHSCREEN
+
+# To Do : HIMAX Chipseet
+source "drivers/input/touchscreen/lge/himax/hx83113a/Kconfig"
+
+endif

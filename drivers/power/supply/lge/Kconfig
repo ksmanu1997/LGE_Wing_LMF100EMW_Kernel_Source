@@ -1,0 +1,57 @@
+config LGE_PM_VENEER_PSY
+	bool "Apply LGE veneer psy"
+	depends on LGE_PM
+	default n
+	help
+	  Say Y here enable support lge veneer psy
+
+config LGE_PM_CCD
+	bool "support Charging Control Daemon"
+	depends on LGE_PM
+	default n
+	help
+	  Say Y to using Charging Control Daemon(CCD)
+
+config LGE_PM_QNOVO_QNS
+	bool "QNOVO QNS driver"
+	default n
+	help
+	  Say Y here to enable the QNS engine. Qnovo driver
+	  accepts pulse parameters via sysfs entries and programs.
+	  It also allows userspace code to read diagnostics of voltage
+	  and current measured during certain phases of the pulses.
+
+config LGE_PM_QNOVO_QNS_V2
+	bool "QNOVO QNS driver V2"
+	default n
+	help
+	  it was derived from LGE_PM_QNOVO_QNS.
+	  it was revised some features. for example, log style & coding style.
+
+config LGE_PM_BRINGUP
+	bool "support LGE PM Bringup"
+	depends on LGE_PM
+	default n
+	help
+	  Say Y to using LGE PM Bringup
+
+config LGE_PM_ACTM
+	bool "support LGE PM ACTM"
+	depends on LGE_PM
+	default n
+	help
+	  Say Y to using LGE PM ACTM (MASSFIVEG-1578)
+
+config LGE_PM_ACTM_V2
+	bool "LGE Adaptive Charging Thermal Mitigation Engine V2 - minor update"
+	depends on LGE_PM
+	default n
+	help
+	  Say Y here enable support lge actm
+
+config LGE_PM_EXT_QG_V2
+	bool "LGE extension-qg-v2"
+	depends on LGE_PM
+	default n
+	help
+	  Say Y here

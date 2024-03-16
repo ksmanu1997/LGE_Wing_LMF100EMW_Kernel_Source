@@ -1,0 +1,5 @@
+config LGE_USB_LATTICE_SLS11HC
+	bool "Lattice SLS Host Controller (USB 1.1) support"
+	select FPGA_MGR_ICE40_SPI
+	help
+	  Enable support for the Lattice SLS host controller.

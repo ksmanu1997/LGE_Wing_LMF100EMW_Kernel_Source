@@ -1,0 +1,7 @@
+menu "TouchSense dw7914 driver support"
+
+config VIB_DW7914
+	tristate "TouchSense dw7914 driver support"
+	default n
+
+endmenu

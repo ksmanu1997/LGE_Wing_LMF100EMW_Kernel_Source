@@ -1,0 +1,15 @@
+config LFS_SUSPEND_BGSYNC
+	bool
+	default y if LFS_COMMON
+
+config LFS_EXT4
+	bool
+	default y if LFS_COMMON
+
+config LFS_SDCARDFS
+	bool
+	default y if LFS_COMMON
+
+config LFS_FAT_FIX_BAD_FORMAT
+	bool
+	default y if LFS_COMMON

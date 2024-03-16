@@ -1,0 +1,28 @@
+#
+# LGE touch core configuration
+#
+
+if INPUT_TOUCHSCREEN
+
+config LGE_TOUCH_SUB_PEN
+	bool "LGE Touch SUB PEN"
+	help
+	test code for pen
+
+config LGE_TOUCH_SUB_DEX
+	bool "LGE Touch SUB DEX"
+	help
+	code for DEX
+
+config SUB_SECURE_TOUCH
+	bool "SUB Secure Touch"
+	help
+	If you use sub_secure_touch, say Y
+
+config LGE_TOUCH_SUB_APP_FW_UPGRADE
+	bool "LGE_TOUCH_SUB_APP_FW_UPGRADE"
+	help
+	code for app fw upgrade
+
+source "drivers/input/touchscreen/lge_sub/lgsic/Kconfig"
+endif

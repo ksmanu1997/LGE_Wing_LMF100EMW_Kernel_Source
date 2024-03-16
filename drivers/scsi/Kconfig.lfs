@@ -1,0 +1,11 @@
+config LFS_SCSI_USB_HOST_NOTIFY
+	bool
+	default y if LFS_COMMON
+
+config LFS_SCSI_DEVICE_IDENTIFIER
+	bool
+	default y if LFS_COMMON
+
+config LFS_SCSI_VENDOR_CMD
+	bool
+	default y if LFS_COMMON
